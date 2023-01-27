@@ -1,0 +1,67 @@
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a>
+                <img src="https://media.istockphoto.com/id/1197832105/vector/male-hand-holding-megaphone-with-new-product-speech-bubble-loudspeaker-banner-for-business.jpg?s=1024x1024&w=is&k=20&c=yA3bC3qNuP8Kur0lZgpAwooYd5IGU0FlVLT17H2V8TQ=" alt="">
+                <h6>All products</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdBwrzcUwq9CyE2SF6gELBVTEXCa2qVy2_LQ&usqp=CAU" alt="">
+                <h6>Electronic</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="https://media.istockphoto.com/id/1197832105/vector/male-hand-holding-megaphone-with-new-product-speech-bubble-loudspeaker-banner-for-business.jpg?s=1024x1024&w=is&k=20&c=yA3bC3qNuP8Kur0lZgpAwooYd5IGU0FlVLT17H2V8TQ=" alt="">
+                <h6>Fashion</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a>
+                <img src="https://media.istockphoto.com/id/1197832105/vector/male-hand-holding-megaphone-with-new-product-speech-bubble-loudspeaker-banner-for-business.jpg?s=1024x1024&w=is&k=20&c=yA3bC3qNuP8Kur0lZgpAwooYd5IGU0FlVLT17H2V8TQ=" alt="">
+                <h6>Jewllery</h6>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container1">
+   <mdb-carousel>
+  <mdb-carousel-item>
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+</mdb-carousel>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of productList | filter:searchText">
+            <div class="card col-md-3">
+                <img  src="{{item.image}}" alt="">
+                <h5 style="white-space:nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">{{item.title}}</h5>
+                <p style="white-space:nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.description}}</p>
+                <p><strong>Price:</strong>${{item.price}}</p>
+                <button class="btn btn-primary" (click)="addtocart(item)">Add to Cart</button>
+            </div>
+        </ng-container>
+    </div>
+</div>
